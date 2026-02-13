@@ -3,8 +3,8 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image"; // 1. Import Image
 
 interface ServiceCardProps {
     title: string;
@@ -24,10 +24,14 @@ export function ServiceCard({ title, description, image, delay = 0 }: ServiceCar
             <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none bg-card/50 backdrop-blur-sm">
                 <div className="h-48 overflow-hidden relative">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10" />
-                    <img
+                    
+                    {/* 2. Replace img with Image */}
+                    <Image
                         src={image}
                         alt={title}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        fill
+                        className="object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
                 </div>
                 <CardHeader>

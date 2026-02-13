@@ -1,7 +1,7 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import Image from "next/image"; // 1. Import the Image component
+import Link from "next/link";
 
 export default function ServicesPage() {
     const services = [
@@ -24,7 +24,7 @@ export default function ServicesPage() {
             description: "Parties, Anniversaries, and Baby Showers.",
             price: "Starting at $1,500",
             features: ["Theme Development", "Entertainment Booking", "Custom Invitations", "On-site Coordination", "Interactive Stations"],
-            image: "https://images.unsplash.com/photo-1533174072545-e8d4aa97edf9?q=80&w=2070&auto=format&fit=crop"
+            image: "https://images.unsplash.com/photo-1765947384834-3bdcffcaffff?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
     ];
 
@@ -42,9 +42,18 @@ export default function ServicesPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card">
-                            <div className="h-48 overflow-hidden">
-                                <img src={service.image} alt={service.title} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                            
+                            {/* 2. Added 'relative' here and replaced img with Image */}
+                            <div className="h-48 overflow-hidden relative">
+                                <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    fill
+                                    className="object-cover hover:scale-105 transition-transform duration-500"
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                />
                             </div>
+
                             <div className="p-6 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-bold font-heading mb-2">{service.title}</h3>
                                 <p className="text-muted-foreground mb-4">{service.description}</p>
@@ -59,7 +68,9 @@ export default function ServicesPage() {
                                     ))}
                                 </ul>
 
-                                <Button className="w-full">Get a Quote</Button>
+                                <Button className="w-full">
+                                    <Link href="/portfolio">Get a Quote </Link>
+                                    </Button>
                             </div>
                         </div>
                     ))}

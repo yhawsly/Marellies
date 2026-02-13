@@ -1,5 +1,4 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+import Image from "next/image"; // Make sure this is imported
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Heart } from "lucide-react";
 
@@ -7,14 +6,15 @@ export default function AboutPage() {
     return (
         <main className="min-h-screen bg-background">
         
-
             {/* Hero */}
             <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center">
                 <div className="absolute inset-0 z-0">
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070&auto=format&fit=crop"
                         alt="Team Meeting"
-                        className="w-full h-full object-cover brightness-50"
+                        fill
+                        className="object-cover brightness-50"
+                        priority // Optional: Prioritizes loading the hero image
                     />
                 </div>
                 <div className="relative z-10 text-center space-y-4">
@@ -40,11 +40,15 @@ export default function AboutPage() {
                                 We believe that every client is unique, and so every event must be too. Our team of dedicated planners, designers, and coordinators work tirelessly to ensure that your personality shines through in every element of your celebration.
                             </p>
                         </div>
+                        
+                        {/* FIXED: Replaced <img> with <Image /> */}
                         <div className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl">
-                            <img
+                            <Image
                                 src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop"
                                 alt="Event Setup"
-                                className="w-full h-full object-cover"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 50vw" // Helps Next.js optimize for different screen sizes
                             />
                         </div>
                     </div>
@@ -86,8 +90,6 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
-
-            
         </main>
     );
 }
