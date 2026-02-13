@@ -1,0 +1,304 @@
+﻿
+> marellies@0.1.0 dev
+> next dev
+
+Γû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.98.1:3000
+
+Γ£ô Starting...
+Γ£ô Ready in 2.4s
+Γùï Compiling / ...
+node.exe : Error: 
+Can't resolve 'tailwi
+ndcss-animate' in 'C:
+\Users\CRYPTO\Desktop
+\marellies\app'
+At line:1 char:1
++ & "C:\Program Files
+\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo 
+...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Error:    
+ Can't re...\mare    
+llies\app':Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+    [2m[at 
+finishWithoutResolve 
+(C:\Users\CRYPTO\Desk
+top\marellies\node_mo
+dules\enhanced-resolv
+e\lib\Resolver.js:586
+:18)][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Reso
+lver.js:678:14][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Reso
+lver.js:739:5][0m
+    [2m[at eval 
+(eval at create (C:\U
+sers\CRYPTO\Desktop\m
+arellies\node_modules
+\tapable\lib\HookCode
+Factory.js:31:10), <a
+nonymous>:15:1)][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Reso
+lver.js:739:5][0m
+    [2m[at eval 
+(eval at create (C:\U
+sers\CRYPTO\Desktop\m
+arellies\node_modules
+\tapable\lib\HookCode
+Factory.js:31:10), <a
+nonymous>:27:1)][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Desc
+riptionFilePlugin.js:
+89:43][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Reso
+lver.js:739:5][0m
+    [2m[at eval 
+(eval at create (C:\U
+sers\CRYPTO\Desktop\m
+arellies\node_modules
+\tapable\lib\HookCode
+Factory.js:31:10), <a
+nonymous>:15:1)][0m
+    [2m[at C:\Users\
+CRYPTO\Desktop\marell
+ies\node_modules\enha
+nced-resolve\lib\Reso
+lver.js:739:5][0m {
+  details: "resolve '
+tailwindcss-animate' 
+in 'C:\\Users\\CRYPTO
+\\Desktop\\marellies\
+\app'\n" +
+    '  Parsed 
+request is a 
+module\n' +
+    '  using 
+description file: C:\
+\Users\\CRYPTO\\Deskt
+op\\marellies\\packag
+e.json (relative 
+path: ./app)\n' +
+    '    resolve as 
+module\n' +
+    "      C:\\Users\
+\CRYPTO\\Desktop\\mar
+ellies\\app\\node_mod
+ules doesn't exist 
+or is not a 
+directory\n" +
+    '      looking 
+for modules in C:\\Us
+ers\\CRYPTO\\Desktop\
+\marellies\\node_modu
+les\n' +
+    '        single 
+file module\n' +
+    '          using 
+description file: C:\
+\Users\\CRYPTO\\Deskt
+op\\marellies\\packag
+e.json (relative 
+path: ./node_modules/
+tailwindcss-animate)\
+n' +
+    '            no 
+extension\n' +
+    "              C:
+\\Users\\CRYPTO\\Desk
+top\\marellies\\node_
+modules\\tailwindcss-
+animate doesn't 
+exist\n" +
+    '            
+.js\n' +
+    "              C:
+\\Users\\CRYPTO\\Desk
+top\\marellies\\node_
+modules\\tailwindcss-
+animate.js doesn't 
+exist\n" +
+    '            
+.json\n' +
+    "              C:
+\\Users\\CRYPTO\\Desk
+top\\marellies\\node_
+modules\\tailwindcss-
+animate.json doesn't 
+exist\n" +
+    '            
+.node\n' +
+    "              C:
+\\Users\\CRYPTO\\Desk
+top\\marellies\\node_
+modules\\tailwindcss-
+animate.node doesn't 
+exist\n" +
+    '            
+.ts\n' +
+    "              C:
+\\Users\\CRYPTO\\Desk
+top\\marellies\\node_
+modules\\tailwindcss-
+animate.ts doesn't 
+exist\n" +
+    "        C:\\User
+s\\CRYPTO\\Desktop\\m
+arellies\\node_module
+s\\tailwindcss-animat
+e doesn't exist\n" +
+    "      C:\\Users\
+\CRYPTO\\Desktop\\nod
+e_modules doesn't 
+exist or is not a 
+directory\n" +
+    "      C:\\Users\
+\CRYPTO\\node_modules
+ doesn't exist or is 
+not a directory\n" +
+    "      C:\\Users\
+\node_modules 
+doesn't exist or is 
+not a directory\n" +
+    "      
+C:\\node_modules 
+doesn't exist or is 
+not a directory"
+}
+Γ¿» ./app/globals.css
+Error evaluating 
+Node.js code
+CssSyntaxError: 
+tailwindcss: C:\Users
+\CRYPTO\Desktop\marel
+lies\app\globals.css:
+1:1: Can't resolve 't
+ailwindcss-animate' 
+in 'C:\Users\CRYPTO\D
+esktop\marellies\app'
+    [at Input.error (
+turbopack:///[project
+]/node_modules/postcs
+s/lib/input.js:135:16
+)]
+    [at Root.error (t
+urbopack:///[project]
+/node_modules/postcss
+/lib/node.js:146:32)]
+    [at Object.Once (
+C:\Users\CRYPTO\Deskt
+op\marellies\node_mod
+ules\@tailwindcss\pos
+tcss\dist\index.js:10
+:6911)]
+    [at async 
+LazyResult.runAsync (
+turbopack:///[project
+]/node_modules/postcs
+s/lib/lazy-result.js:
+293:11)]
+    [at async 
+transform (turbopack:
+///[turbopack-node]/t
+ransforms/postcss.ts:
+70:34)]
+    [at async run (tu
+rbopack:///[turbopack
+-node]/ipc/evaluate.t
+s:92:23)]
+
+Import trace:
+  Client Component 
+Browser:
+    
+./app/globals.css 
+[Client Component 
+Browser]
+    ./app/layout.tsx 
+[Server Component]
+
+
+Γ¿» ./app/globals.css
+Error evaluating 
+Node.js code
+CssSyntaxError: 
+tailwindcss: C:\Users
+\CRYPTO\Desktop\marel
+lies\app\globals.css:
+1:1: Can't resolve 't
+ailwindcss-animate' 
+in 'C:\Users\CRYPTO\D
+esktop\marellies\app'
+    [at Input.error (
+turbopack:///[project
+]/node_modules/postcs
+s/lib/input.js:135:16
+)]
+    [at Root.error (t
+urbopack:///[project]
+/node_modules/postcss
+/lib/node.js:146:32)]
+    [at Object.Once (
+C:\Users\CRYPTO\Deskt
+op\marellies\node_mod
+ules\@tailwindcss\pos
+tcss\dist\index.js:10
+:6911)]
+    [at async 
+LazyResult.runAsync (
+turbopack:///[project
+]/node_modules/postcs
+s/lib/lazy-result.js:
+293:11)]
+    [at async 
+transform (turbopack:
+///[turbopack-node]/t
+ransforms/postcss.ts:
+70:34)]
+    [at async run (tu
+rbopack:///[turbopack
+-node]/ipc/evaluate.t
+s:92:23)]
+
+Import trace:
+  Client Component 
+Browser:
+    
+./app/globals.css 
+[Client Component 
+Browser]
+    ./app/layout.tsx 
+[Server Component]
+
+
+Γùï Compiling /_error ...
+ GET / 500 in 5.2s (compile: 4.6s, render: 581ms)
