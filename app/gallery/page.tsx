@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from "@/components/ui/button";
-import { X, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
 
 interface PortfolioItem {
     id: number;

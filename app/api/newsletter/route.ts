@@ -1,6 +1,6 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
-import { z } from 'zod';
+import { z, ZodError } from 'zod';
 
 const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
@@ -21,7 +21,17 @@ export async function POST(req: NextRequest) {
         // Send welcome email to the user
         await resend.emails.send({
             from: 'Marellies Newsletter <onboarding@resend.dev>', // Update with verified domain
-            to: 'delivered@resend.dev', // In production, this would be the 'email' variable
+            to: email,
+            replyTo: 'hello@marellies.com',
+            subject: 'Welcome to Marellies Newsletter',
+            html: `...`,
+        });
+
+        console.log(`Subscribing email: ${email}`);
+
+        await resend.emails.send({
+            from: 'Marellies Newsletter <onboarding@resend.dev>',
+            to: 'delivered@resend.dev',
             replyTo: 'hello@marellies.com',
             subject: 'Welcome to Marellies Newsletter',
             html: `
@@ -37,12 +47,13 @@ export async function POST(req: NextRequest) {
         });
 
         return NextResponse.json({ success: true });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Newsletter error:', error);
-        // Simplified error handling to avoid build issues with Zod types
-        if (error?.name === 'ZodError') {
+
+        if (error instanceof ZodError) {
             return NextResponse.json({ success: false, errors: error.errors }, { status: 400 });
         }
         return NextResponse.json({ success: false, error: 'Failed to subscribe' }, { status: 500 });
     }
 }
+

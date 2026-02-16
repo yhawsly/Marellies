@@ -1,4 +1,4 @@
-import { CheckCircle, Award, Users, HeartHandshake } from "lucide-react";
+import { Award, Users, HeartHandshake } from "lucide-react";
 
 export function WhyChooseUs() {
     return (

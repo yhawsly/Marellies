@@ -43,6 +43,7 @@ export async function POST(req: NextRequest) {
     } catch (error) {
         console.error('Contact form error:', error);
         if (error instanceof ZodError) {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             return NextResponse.json({ success: false, errors: (error as any).errors }, { status: 400 });
         }
         return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
