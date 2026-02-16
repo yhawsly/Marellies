@@ -43,19 +43,13 @@ export function TestimonialCarousel() {
             return;
         }
 
-        const onSelect = () => {
-            setCount(api.scrollSnapList().length);
+        setCount(api.scrollSnapList().length);
+        setCurrent(api.selectedScrollSnap() + 1);
+
+        api.on("select", () => {
             setCurrent(api.selectedScrollSnap() + 1);
-        };
-
-        onSelect();
-        api.on("select", onSelect);
-        api.on("reInit", onSelect);
-
-        return () => {
-            api.off("select", onSelect);
-            api.off("reInit", onSelect);
-        };
+        });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [api]);
 
     return (
