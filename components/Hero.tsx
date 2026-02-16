@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const videoUrl = "https://www.youtube.com/embed/GOZDDnF4k0c?autoplay=1&mute=1&loop=1&playlist=GOZDDnF4k0c&controls=0&showinfo=0&rel=0&iv_load_policy=3";
 
@@ -19,9 +20,9 @@ export function Hero() {
                         allow="autoplay; encrypted-media"
                         title="Background Video"
                     />
-                    
+
                     {/* Fallback & Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+                    <div className="absolute inset-0 bg-black/60" />
                 </div>
             </div>
 
@@ -32,13 +33,13 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight text-foreground drop-shadow-xl">
-                        Unforgettable <span className="text-primary italic">Moments</span>
+                    <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-heading font-bold tracking-tight text-white drop-shadow-xl">
+                        Unforgettable <span className="text-primary-foreground italic">Moments</span>
                     </h1>
                 </motion.div>
 
                 <motion.p
-                    className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto drop-shadow-md"
+                    className="text-xl md:text-2xl text-gray-200 max-w-2xl mx-auto drop-shadow-md"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
@@ -53,10 +54,10 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
                     <Button size="lg" className="text-lg px-8 py-6 rounded-full shadow-lg hover:shadow-primary/20 transition-all">
-                         <Link href="/contact">Plan Your Event</Link>
+                        <Link href="/contact">Plan Your Event</Link>
                     </Button>
-                    <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2 bg-background/50 hover:bg-background/80 backdrop-blur-sm">
-                        <Link href="/portfolio">View Portfolio</Link>
+                    <Button variant="outline" size="lg" className="text-lg px-8 py-6 rounded-full border-2 bg-white/10 text-white hover:bg-white/20 hover:text-white backdrop-blur-sm border-white/20">
+                        <Link href="/gallery">View Gallery</Link>
                     </Button>
                 </motion.div>
             </div>
@@ -67,8 +68,15 @@ export function Hero() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
             >
-                <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center pt-2">
-                    <div className="w-1 h-2 bg-primary rounded-full" />
+                {/* Replaced CSS scroll indicator with wedding.png logo */}
+                <div className="relative w-24 h-24">
+                    <Image
+                        src="/wed.png"
+                        alt="Wedding Logo"
+                        fill
+                        className="object-contain drop-shadow-lg"
+                        unoptimized
+                    />
                 </div>
             </motion.div>
         </section>

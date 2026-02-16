@@ -69,7 +69,7 @@ export default function ServicesPage() {
                                 </ul>
 
                                 <Button className="w-full">
-                                    <Link href="/portfolio">Get a Quote </Link>
+                                    <Link href="/contact">Get a Quote </Link>
                                     </Button>
                             </div>
                         </div>

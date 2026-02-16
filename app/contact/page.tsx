@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 export default function ContactPage() {
     return (
         <main className="min-h-screen bg-background">
-        
+
             <section className="pt-32 pb-12 bg-primary text-primary-foreground text-center">
                 <h1 className="text-5xl font-heading font-bold mb-4">Contact Us</h1>
                 <p className="text-xl text-primary-foreground/80">
@@ -13,7 +13,7 @@ export default function ContactPage() {
             </section>
 
             <section className="py-20 container mx-auto px-4 md:px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="flex flex-col-reverse lg:grid lg:grid-cols-2 gap-12">
 
                     {/* Contact Info */}
                     <div className="space-y-8">
@@ -57,11 +57,11 @@ export default function ContactPage() {
 
                         {/* Map Integration */}
                         <div className="w-full h-64 bg-muted rounded-lg overflow-hidden border border-border">
-                            <iframe 
+                            <iframe
                                 title="Marellies Location"
-                                width="100%" 
-                                height="100%" 
-                                frameBorder="0" 
+                                width="100%"
+                                height="100%"
+                                frameBorder="0"
                                 style={{ border: 0 }}
                                 src="https://maps.google.com/maps?q=MARELLIES%20Oko%20Okine%20St%20Ghana&t=&z=15&ie=UTF8&iwloc=&output=embed"
                                 allowFullScreen
@@ -79,7 +79,7 @@ export default function ContactPage() {
                 </div>
             </section>
 
-          
+
         </main>
     );
 }

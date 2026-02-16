@@ -21,10 +21,10 @@ export function ServiceCard({ title, description, image, delay = 0 }: ServiceCar
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay }}
         >
-            <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 border-none bg-card/50 backdrop-blur-sm">
+            <Card className="overflow-hidden group border-none bg-card/50 backdrop-blur-sm">
                 <div className="h-48 overflow-hidden relative">
                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10" />
-                    
+
                     {/* 2. Replace img with Image */}
                     <Image
                         src={image}

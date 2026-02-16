@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -10,7 +11,7 @@ const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" }, // Changed from gallery to portfolio to match task list better or stick to one. I'll use portfolio.
+    { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
 ];
 
@@ -32,12 +33,18 @@ export function Navbar() {
                 "fixed top-0 w-full z-50 transition-all duration-300",
                 scrolled
                     ? "bg-white/70 backdrop-blur-md border-b shadow-sm py-2"
-                    : "bg-white py-4"
+                    : "bg-white py-3"
             )}
         >
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                <Link href="/" className="text-2xl font-heading font-bold tracking-tighter text-foreground">
-                    MARELLIES
+                <Link href="/" className="relative w-28 h-10 md:w-40 md:h-14 shrink-0">
+                    <Image
+                        src="/logo.png"
+                        alt="Marellies Logo"
+                        fill
+                        className="object-contain object-left"
+                        unoptimized
+                    />
                 </Link>
 
                 {/* Desktop Nav */}
@@ -51,8 +58,8 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Button variant="default" size="sm" className="hidden lg:inline-flex">
-                        Book Now
+                    <Button variant="default" size="sm" className="hidden lg:inline-flex" asChild>
+                        <Link href="/contact">Book Now</Link>
                     </Button>
                 </nav>
 
@@ -78,7 +85,9 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Button className="w-full mt-2">Book an Event</Button>
+                    <Button className="w-full mt-2" asChild>
+                        <Link href="/contact" onClick={() => setIsOpen(false)}>Book an Event</Link>
+                    </Button>
                 </div>
             )}
         </header>
