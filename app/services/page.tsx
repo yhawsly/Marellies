@@ -42,7 +42,7 @@ export default function ServicesPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-card">
-                            
+
                             {/* 2. Added 'relative' here and replaced img with Image */}
                             <div className="h-48 overflow-hidden relative">
                                 <Image
@@ -70,7 +70,7 @@ export default function ServicesPage() {
 
                                 <Button className="w-full">
                                     <Link href="/contact">Get a Quote </Link>
-                                    </Button>
+                                </Button>
                             </div>
                         </div>
                     ))}
