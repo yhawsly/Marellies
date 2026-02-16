@@ -51,7 +51,8 @@ export async function POST(req: NextRequest) {
         console.error('Newsletter error:', error);
 
         if (error instanceof ZodError) {
-            return NextResponse.json({ success: false, errors: error.errors }, { status: 400 });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            return NextResponse.json({ success: false, errors: (error as any).errors }, { status: 400 });
         }
         return NextResponse.json({ success: false, error: 'Failed to subscribe' }, { status: 500 });
     }
