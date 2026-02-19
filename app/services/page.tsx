@@ -3,6 +3,11 @@ import { Check } from "lucide-react";
 import Image from "next/image"; // 1. Import the Image component
 import Link from "next/link";
 
+export const metadata = {
+    title: "Our Services",
+    description: "From weddings to corporate galas, discover the range of event planning and design services offered by Marellies.",
+};
+
 export default function ServicesPage() {
     const services = [
         {

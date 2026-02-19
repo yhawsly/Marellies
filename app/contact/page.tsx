@@ -1,6 +1,11 @@
 import { ContactForm } from "@/components/ContactForm";
 import { MapPin, Phone, Mail } from "lucide-react";
 
+export const metadata = {
+    title: "Contact Us",
+    description: "Get in touch with the Marellies team to start planning your next unforgettable event.",
+};
+
 export default function ContactPage() {
     return (
         <main className="min-h-screen bg-background">

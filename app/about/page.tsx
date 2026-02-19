@@ -2,6 +2,11 @@ import Image from "next/image"; // Make sure this is imported
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Award, Heart } from "lucide-react";
 
+export const metadata = {
+    title: "About Us",
+    description: "Learn about Marellies and our passion for creating unforgettable moments through expert event planning.",
+};
+
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-background">

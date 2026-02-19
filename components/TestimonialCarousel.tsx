@@ -19,22 +19,28 @@ export function TestimonialCarousel() {
 
     const testimonials = [
         {
-            name: "Sarah & Mike",
-            role: "Ideally Married Couple",
-            content: "Marellies made our dream wedding a reality. Every detail was perfect, and the team was incredibly supportive throughout the process.",
+            name: "Prophetic Surf",
+            role: "Client",
+            content: "For stunning photos and amazing videos, I highly recommend Emmanuel Multimedia — they never disappoint!",
             rating: 5,
+            color: "bg-[#fce4ec]", // Light Pink
+            stackColors: ["bg-[#e3f2fd]", "#fce4ec"] // Blue and Pink layers
         },
         {
-            name: "Acme Corp",
-            role: "Corporate Client",
-            content: "Professional, efficient, and creative. Our annual gala was a huge success thanks to their expertise.",
+            name: "Sarah Johnstone",
+            role: "Wedding Client",
+            content: "Every detail was accounted for. The team went above and beyond to ensure our special day was absolutely perfect.",
             rating: 5,
+            color: "bg-[#fff9c4]", // Light Yellow
+            stackColors: ["bg-[#fce4ec]", "bg-[#e8f5e9]"]
         },
         {
-            name: "Jessica T.",
-            role: "Birthday Host",
-            content: "The best party ever! My guests are still talking about the decor and entertainment. Highly recommend!",
+            name: "David Chen",
+            role: "Corporate Lead",
+            content: "Professionalism at its finest. They handled our multi-day summit with grace and precision. Highly recommended.",
             rating: 5,
+            color: "bg-[#e1f5fe]", // Light Blue
+            stackColors: ["bg-[#f3e5f5]", "bg-[#fff3e0]"]
         },
     ];
 
@@ -44,46 +50,68 @@ export function TestimonialCarousel() {
         }
 
         setCount(api.scrollSnapList().length);
-        setCurrent(api.selectedScrollSnap() + 1);
+        setCurrent(api.selectedScrollSnap());
 
         api.on("select", () => {
-            setCurrent(api.selectedScrollSnap() + 1);
+            setCurrent(api.selectedScrollSnap());
         });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [api]);
 
     return (
-        <div className="w-full max-w-4xl mx-auto px-4 md:px-0">
-            <Carousel setApi={setApi} className="w-full">
+        <div className="w-full max-w-lg mx-auto px-4">
+            <Carousel setApi={setApi} className="w-full" opts={{ loop: true }}>
                 <CarouselContent>
                     {testimonials.map((testimonial, index) => (
                         <CarouselItem key={index}>
-                            <div className="p-1">
-                                <Card className="bg-muted/50 border-none shadow-sm">
-                                    <CardContent className="flex flex-col items-center justify-center p-8 text-center space-y-4">
-                                        <div className="flex gap-1">
-                                            {[...Array(testimonial.rating)].map((_, i) => (
-                                                <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                                            ))}
+                            <div className="py-12 px-6">
+                                <div className="relative group">
+                                    {/* Stacked background layers */}
+                                    <div className="absolute inset-0 bg-blue-100/50 rounded-xl rotate-3 translate-y-3 translate-x-1 shadow-sm" />
+                                    <div className="absolute inset-0 bg-rose-100/50 rounded-xl -rotate-2 translate-y-1.5 -translate-x-1 shadow-sm" />
+
+                                    {/* Main Note Card */}
+                                    <Card className={`${testimonial.color} border-none shadow-xl min-h-[400px] relative z-10 p-8 flex flex-col -rotate-1 transition-transform hover:rotate-0 duration-300`}>
+                                        <div className="flex items-start gap-4 mb-auto">
+                                            {/* Circular Avatar Placeholder */}
+                                            <div className="w-14 h-14 rounded-full border-2 border-white/80 shrink-0 flex items-center justify-center overflow-hidden bg-white/20">
+                                                <div className="w-12 h-12 rounded-full border border-white/40" />
+                                            </div>
+                                            <div className="text-left pt-1">
+                                                <h4 className="font-serif font-black text-xl text-[#2d3436] leading-tight">
+                                                    {testimonial.name}
+                                                </h4>
+                                                <p className="text-[#0984e3] font-medium text-sm">
+                                                    {testimonial.role}
+                                                </p>
+                                            </div>
                                         </div>
-                                        <blockquote className="text-xl italic font-medium text-foreground/80">
-                                            "{testimonial.content}"
+
+                                        <blockquote className="mt-8 text-lg font-medium text-neutral-800/90 italic leading-relaxed text-left">
+                                            “{testimonial.content}”
                                         </blockquote>
-                                        <div>
-                                            <cite className="font-bold not-italic text-lg">{testimonial.name}</cite>
-                                            <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                                        </div>
-                                    </CardContent>
-                                </Card>
+                                    </Card>
+                                </div>
                             </div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex" />
-                <CarouselNext className="hidden md:flex" />
+
             </Carousel>
-            <div className="py-2 text-center text-sm text-muted-foreground md:hidden">
-                {current} / {count}
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-4">
+                {testimonials.map((_, i) => (
+                    <button
+                        key={i}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${current === i
+                            ? "bg-[#2d3436] w-6"
+                            : "bg-[#dfe6e9] hover:bg-neutral-400"
+                            }`}
+                        onClick={() => api?.scrollTo(i)}
+                        aria-label={`Go to slide ${i + 1}`}
+                    />
+                ))}
             </div>
         </div>
     );
