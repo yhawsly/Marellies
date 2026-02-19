@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
 
       {/* About Snippet */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/30 fade-in-up">
         <div className="container mx-auto px-4 md:px-6 text-center max-w-3xl space-y-6">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-gradient">
             Curating Elegance & Excellence
@@ -37,7 +37,7 @@ export default function Home() {
       <HowItWorks />
 
       {/* Services Section */}
-      <section className="py-20">
+      <section className="py-24 fade-in-up">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">Our Services</h2>
@@ -76,7 +76,7 @@ export default function Home() {
       </section>
 
       {/* Portfolio Preview / Gallery Strip */}
-      <section className="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground overflow-hidden relative">
+      <section className="py-24 bg-gradient-to-br from-primary to-primary/80 text-primary-foreground overflow-hidden relative fade-in-up">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay"></div>
         <div className="container mx-auto px-4 relative z-10 text-center space-y-8">
           <h2 className="text-3xl md:text-5xl font-heading font-bold text-secondary">
@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-24 bg-muted/30 fade-in-up">
         <div className="container mx-auto px-4 text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-heading font-bold mb-4">Client Love</h2>
           <p className="text-muted-foreground">What people are saying about their Marellies experience.</p>
